@@ -1,4 +1,4 @@
-import { tex2svg } from "./mathjax";
+import { mathml2svg, tex2svg } from "./mathjax";
 import { create_canvas_from_svg } from "./svg_to_canvas";
 
 document.body.replaceChildren("");
@@ -32,7 +32,89 @@ const formulas = [
   \\nabla \\cdot \\vec{\\mathbf{B}} & = 0
 \\end{align}`,
 ];
+console.log("formulas", formulas.length);
 
+const style_tex = (text) => `\\color[RGB]{0,0,255} \\bf{${text}}`;
 for (const formula of formulas) {
   create_canvas_from_svg(tex2svg(formula));
+}
+create_canvas_from_svg(tex2svg(style_tex(formulas[0])));
+
+const mathml_formulas = [`<math>
+<mrow>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+    <mrow>
+      <mo>-</mo>
+      <mi>b</mi>
+    </mrow>
+    <mo>&#xB1;</mo>
+    <msqrt>
+      <mrow>
+      <msup>
+        <mi>b</mi>
+        <mn>2</mn>
+      </msup>
+      <mo>-</mo>
+      <mrow>
+        <mn>4</mn>
+        <mo>&#x2062;</mo>
+        <mi>a</mi>
+        <mo>&#x2062;</mo>
+        <mi>c</mi>
+      </mrow>
+      </mrow>
+    </msqrt>
+    </mrow>
+    <mrow>
+    <mn>2</mn>
+    <mo>&#x2062;</mo>
+    <mi>a</mi>
+    </mrow>
+  </mfrac>
+</mrow>
+</math>`];
+
+export function insert_text_on_position(
+  destination: string,
+  position: number,
+  text_to_be_inserted: string,
+) {
+  const result_text = [];
+  result_text.push(destination.slice(0, position));
+  result_text.push(text_to_be_inserted);
+  result_text.push(destination.slice(position));
+  return result_text.join("");
+}
+
+function styled_formula(text): string {
+  let styled = text.trim();
+  let matchs = styled.match(/<math(.*?[^?])?>/s);
+  if (!matchs) {
+    return text.trim();
+  }
+
+  styled = insert_text_on_position(
+    styled,
+    styled.indexOf(matchs[0]) + matchs[0].length,
+    `<mstyle mathcolor="#0000ff" mathvariant="bold">`,
+  );
+
+  matchs = styled.match(/<\/[^>]*?math.*?>/s);
+  if (!matchs) {
+    return text.trim();
+  }
+
+  return insert_text_on_position(
+    styled,
+    styled.indexOf(matchs[0]),
+    "</mstyle>",
+  );
+}
+
+for (const formula of mathml_formulas) {
+  create_canvas_from_svg(mathml2svg(formula));
+  create_canvas_from_svg(mathml2svg(styled_formula(formula)));
 }

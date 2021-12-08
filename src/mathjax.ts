@@ -42,5 +42,5 @@ export function mathml2svg(formula: string): SVGSVGElement {
     InputJax: mathml,
     OutputJax: svg,
   });
-  return mathml_to_svg.convert(formula, defaults);
+  return mathml_to_svg.convert(formula, defaults).firstElementChild as SVGSVGElement;;
 }
