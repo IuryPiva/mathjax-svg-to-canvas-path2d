@@ -1,0 +1,16 @@
+{
+  "name": "svg-to-path2d",
+  "version": "1.0.0",
+  "description": "",
+  "source": "./src/index.html",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mathjax-full": "^3.2.0",
+    "parcel": "^2.0.1"
+  },
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  }
+}
