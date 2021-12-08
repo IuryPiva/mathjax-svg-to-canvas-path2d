@@ -34,7 +34,7 @@ const formulas = [
 ];
 console.log("formulas", formulas.length);
 
-const style_tex = (text) => `\\color[RGB]{0,0,255} \\bf{${text}}`;
+const style_tex = (text: string) => `\\color[RGB]{0,0,255} \\bf{${text}}`;
 for (const formula of formulas) {
   create_canvas_from_svg(tex2svg(formula));
 }
@@ -89,7 +89,7 @@ export function insert_text_on_position(
   return result_text.join("");
 }
 
-function styled_formula(text): string {
+function styled_formula(text: string): string {
   let styled = text.trim();
   let matchs = styled.match(/<math(.*?[^?])?>/s);
   if (!matchs) {
