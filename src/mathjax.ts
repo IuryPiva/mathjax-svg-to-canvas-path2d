@@ -1,11 +1,10 @@
-import { mathjax } from "mathjax-full/js/mathjax.js";
-import { TeX } from "mathjax-full/js/input/tex.js";
-import { MathML } from "mathjax-full/js/input/mathml";
-import { SVG } from "mathjax-full/js/output/svg.js";
-
-import { browserAdaptor } from "mathjax-full/js/adaptors/browserAdaptor";
-import { RegisterHTMLHandler } from "mathjax-full/js/handlers/html.js";
-import { AllPackages } from "mathjax-full/js/input/tex/AllPackages.js";
+import { mathjax } from "../node_modules/mathjax-full/js/mathjax.js";
+import { TeX } from "../node_modules/mathjax-full/js/input/tex.js";
+import { MathML } from "../node_modules/mathjax-full/js/input/mathml.js";
+import { SVG } from "../node_modules/mathjax-full/js/output/svg.js";
+import { browserAdaptor } from "../node_modules/mathjax-full/js/adaptors/browserAdaptor.js";
+import { RegisterHTMLHandler } from "../node_modules/mathjax-full/js/handlers/html.js";
+import { AllPackages } from "../node_modules/mathjax-full/js/input/tex/AllPackages.js";
 
 type ConvertOptions = {
   display?: boolean;

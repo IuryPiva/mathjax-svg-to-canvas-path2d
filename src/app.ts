@@ -1,5 +1,5 @@
-import { mathml2svg, tex2svg } from "./mathjax";
-import { create_canvas_from_svg } from "./svg_to_canvas";
+import { mathml2svg, tex2svg } from "./mathjax.ts";
+import { create_canvas_from_svg } from "./svg_to_canvas.ts";
 
 document.body.replaceChildren("");
 
