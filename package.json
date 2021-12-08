@@ -11,6 +11,6 @@
   },
   "scripts": {
     "start": "parcel",
-    "build": "parcel build --dist-dir pages"
+    "build": "parcel build --dist-dir ./"
   }
 }
