@@ -9,6 +9,7 @@
     "mathjax-full": "^3.2.0"
   },
   "scripts": {
-    "start": "deno run -A --watch mod.tsx"
+    "start": "deno run -A --watch mod.ts",
+    "bundle": "deno run -A --unstable bundle.ts"
   }
 }
