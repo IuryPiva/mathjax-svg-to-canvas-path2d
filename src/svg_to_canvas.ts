@@ -345,7 +345,12 @@ export function create_canvas_from_svg(svg: SVGSVGElement) {
   const canvas_style = `${style} width: ${width}; height: ${height};`;
 
   canvas.setAttribute("style", canvas_style);
-  const { svg_width, svg_height } = svg_size(svg);
+  let { svg_width, svg_height } = svg_size(svg);
+
+  // increase dpi
+  svg_width = svg_width * 3
+  svg_height = svg_height * 3
+
   canvas.setAttribute("width", `${svg_width}`);
   canvas.setAttribute("height", `${svg_height}`);
 
