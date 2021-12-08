@@ -10,6 +10,6 @@
   },
   "scripts": {
     "start": "deno run -A --watch mod.ts",
-    "bundle": "deno run -A --unstable bundle.ts"
+    "compile": "deno run -A --unstable compiler.ts"
   }
 }
