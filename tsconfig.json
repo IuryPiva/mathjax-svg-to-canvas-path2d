@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
+    "sourceMap": false,
     "lib": ["esnext", "dom", "dom.iterable", "deno.ns"]
   }
 }

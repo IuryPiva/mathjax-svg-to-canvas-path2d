@@ -4,10 +4,10 @@ import { create_canvas_from_svg } from "./svg_to_canvas.ts";
 window.run = () => {
   const formulas = [
     `\\begin{align}
-    \\dot{x} & = \\sigma(y-x) \\\\
-  \\dot{y} & = \\rho x - y - xz \\\\
-  \\dot{z} & = -\\beta z + xy
-  \\end{align}`,
+      \\dot{x} & = \\sigma(y-x) \\\\
+      \\dot{y} & = \\rho x - y - xz \\\\
+      \\dot{z} & = -\\beta z + xy
+    \\end{align}`,
     "x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.",
     `\\left( \\sum_{k=1}^n a_k b_k \\right)^{\\!\\!2} \\leq
     \\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)`,
