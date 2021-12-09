@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.115.1/http/server.ts";
 const { compilerOptions } = JSON.parse(
-  Deno.readTextFileSync("./tsconfig.json"),
+  await Deno.readTextFile("./tsconfig.json"),
 );
 
 async function handleRequest(request: Request): Promise<Response> {
