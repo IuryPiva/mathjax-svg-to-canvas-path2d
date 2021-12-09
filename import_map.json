@@ -1,0 +1,13 @@
+{
+  "imports": {
+    "mathjax-full/": "https://esm.sh/mathjax-full/",
+    "commander": "https://esm.sh/commander/",
+    "esm": "https://esm.sh/esm/",
+    "mathjax-full": "https://esm.sh/mathjax-full/",
+    "mhchemparser": "https://esm.sh/mhchemparser/",
+    "mj-context-menu": "https://esm.sh/mj-context-menu/",
+    "speech-rule-engine": "https://esm.sh/speech-rule-engine/",
+    "wicked-good-xpath": "https://esm.sh/wicked-good-xpath/",
+    "xmldom-sre": "https://esm.sh/xmldom-sre/"
+  }
+}

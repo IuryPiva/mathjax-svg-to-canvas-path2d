@@ -4,7 +4,7 @@ const { compilerOptions } = JSON.parse(
 
 const { files } = await Deno.emit("./src/app.ts", {
   bundle: "module",
-  compilerOptions,
+  importMapPath: "import_map.json",
 });
 
 const { pathname } = new URL(import.meta.url.split("/").slice(0, -1).join("/"));
@@ -19,9 +19,8 @@ try {
 for (const [fileName, text] of Object.entries(files)) {
   const url = new URL(fileName);
   const fileDestination = `./dist${url.pathname.replace(pathname, "")}`;
-  console.log(fileDestination.split("/").slice(0, -1).join("/"));
-  console.log(fileDestination);
 
+  console.log(fileDestination);
   await Deno.mkdirSync(fileDestination.split("/").slice(0, -1).join("/"), {
     recursive: true,
   });
